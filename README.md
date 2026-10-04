@@ -175,24 +175,3 @@ mushroom-edibility-classification/
 └── README.md
 ```
 
-## How to Run
-
-### Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the analysis from the project root (the folder containing
-`mushroom_classification.py`):
-
-```bash
-python mushroom_classification.py
-```
-
-The script loads and cleans the data from `data/secondary_data.csv`, trains and
-compares the three models, runs the safety threshold analysis and the
-beginner-features test, saves all figures to a `figures/` folder and the
-reusable model, and demonstrates a single-mushroom prediction.
-
-Alternatively, open and run the notebook in `notebooks/`.
