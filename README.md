@@ -159,19 +159,5 @@ the real-world cost of a wrong "edible" call. The beginner-features test shows
 how much predictive power remains when the model is restricted to traits a
 novice forager can actually observe, which is the basis for a practical,
 safety-conscious field tool.
-
-## Repository Contents
-
-```
-mushroom-edibility-classification/
-├── mushroom_classification.py   # end-to-end analysis script
-├── data/
-│   └── secondary_data.csv       # mushroom dataset (semicolon-separated)
-├── notebooks/
-│   └── mushroom_edibility_classification.ipynb
-├── paper/
-│   └── mushroom_edibility_classification_paper.pdf   # full written analysis
-├── requirements.txt
-└── README.md
 ```
 
