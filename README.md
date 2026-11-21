@@ -125,8 +125,7 @@ missed poisonous mushroom, so a more cautious cutoff is justified.
 
 A separate Random Forest trained only on easily observed traits tests whether
 reliable prediction is possible without expert-level observations — the
-realistic scenario for a novice forager. This model is the one saved for reuse,
-since a practical field tool can only rely on traits a normal person can see.
+realistic scenario for a novice forager. This is the model a practical field tool would use, since it can only rely on traits a normal person can see.
 
 ## Interpretation (feature importance)
 
@@ -137,18 +136,16 @@ data.
 
 ## Outputs
 
-Running the script produces the following figures (saved to `figures/`):
+The notebook displays five charts inline:
 
-- `fig1_class_balance.png` — edible vs. poisonous counts
-- `fig2_cap_diameter.png` — cap diameter by edibility
-- `fig3_confusion_matrix.png` — Random Forest confusion matrix
-- `fig5_roc_curve.png` — ROC curve with AUC (safety tradeoff)
-- `fig4_feature_importance.png` — top 10 most important features
+- Class balance: edible vs. poisonous counts
+- Cap diameter by edibility
+- Random Forest confusion matrix
+- ROC curve with AUC (the safety tradeoff)
+- Top 10 most important features
 
-It also saves the trained beginner-features model (`mushroom_model.pkl`) and its
-column list (`model_columns.pkl`) so predictions can be made later without
-retraining, and demonstrates scoring a single new mushroom with a three-way
-output: edible, poisonous, or "NOT CERTAIN" when the model is not confident.
+It also prints the model comparison scores, the safety-first threshold sweep,
+and the beginner-features test results.
 
 ## Conclusion
 
@@ -161,3 +158,23 @@ novice forager can actually observe, which is the basis for a practical,
 safety-conscious field tool.
 ```
 
+## How to Run
+
+Tested on Python 3.13.
+
+```bash
+pip install -r requirements.txt
+jupyter notebook notebooks/mushroom_edibility_classification.ipynb
+```
+
+Run all cells. The notebook finds `secondary_data.csv` in the `data/` folder and
+runs end to end in about a minute with no errors.
+
+## Repository Contents
+
+```
+data/secondary_data.csv                            Secondary mushroom dataset
+notebooks/mushroom_edibility_classification.ipynb  Full analysis
+paper/                                             Written white paper (DOCX and PDF)
+requirements.txt                                   Python dependencies
+```
